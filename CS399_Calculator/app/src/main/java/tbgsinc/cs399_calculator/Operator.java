@@ -15,7 +15,8 @@ public enum Operator {
 	SIN ("sin", 1),
 	COS ("cos", 1),
 	TAN ("tan", 1),
-	LOG ("log", 1);
+	LOG ("log", 1),
+	SQRT ("√", 2);
 	
 	private static final Map<String, Operator> operators;
 	static{
@@ -31,6 +32,7 @@ public enum Operator {
 		ops.put(Operator.COS.symbol(), Operator.COS);
 		ops.put(Operator.TAN.symbol(), Operator.TAN);
 		ops.put(Operator.LOG.symbol(), Operator.LOG);
+		ops.put(Operator.SQRT.symbol(), Operator.SQRT);
 		operators = Collections.unmodifiableMap(ops);
 	}
 	

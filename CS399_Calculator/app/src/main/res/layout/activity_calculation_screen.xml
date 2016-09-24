@@ -11,7 +11,6 @@
     tools:context="tbgsinc.cs399_calculator.CalculationScreen">
 
     <TextView
-        android:text="asdasdasdasd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -32,7 +31,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button9"
             android:layout_row="3"
-            android:layout_column="2"/>
+            android:layout_column="2"
+            android:onClick="onTap"/>
 
         <Button
             android:text="8"
@@ -40,7 +40,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button8"
             android:layout_row="3"
-            android:layout_column="1"/>
+            android:layout_column="1"
+            android:onClick="onTap"/>
 
         <Button
             android:text="7"
@@ -48,7 +49,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button7"
             android:layout_row="3"
-            android:layout_column="0"/>
+            android:layout_column="0"
+            android:onClick="onTap"/>
 
         <Button
             android:text="6"
@@ -56,7 +58,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button6"
             android:layout_row="4"
-            android:layout_column="2"/>
+            android:layout_column="2"
+            android:onClick="onTap"/>
 
         <Button
             android:text="5"
@@ -64,7 +67,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button5"
             android:layout_row="4"
-            android:layout_column="1"/>
+            android:layout_column="1"
+            android:onClick="onTap"/>
 
         <Button
             android:text="4"
@@ -72,7 +76,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button4"
             android:layout_row="4"
-            android:layout_column="0"/>
+            android:layout_column="0"
+            android:onClick="onTap"/>
 
         <Button
             android:text="3"
@@ -80,7 +85,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button3"
             android:layout_row="5"
-            android:layout_column="2"/>
+            android:layout_column="2"
+            android:onClick="onTap"/>
 
         <Button
             android:text="2"
@@ -88,7 +94,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button2"
             android:layout_row="5"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:onClick="onTap"/>
 
         <Button
             android:text="1"
@@ -96,7 +103,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button"
             android:layout_row="5"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:onClick="onTap"/>
     </GridLayout>
 
 </RelativeLayout>
