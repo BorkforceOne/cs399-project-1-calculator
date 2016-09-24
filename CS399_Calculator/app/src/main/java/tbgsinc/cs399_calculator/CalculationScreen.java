@@ -20,9 +20,24 @@ public class CalculationScreen extends AppCompatActivity {
         Button b = (Button) findViewById(v.getId());
         TextView tv = (TextView) findViewById(R.id.equationView);
 
-        Parser p = new Parser();
-        Double DD = solveEquation(p.translate("8/((8+4)-4)"));
-        tv.setText(DD.toString());
+        switch (v.getId()) {
+            case R.id.buttonBack:
+                if (tv.getText().length() > 0) {
+                    tv.setText(tv.getText().subSequence(0, tv.getText().length() - 1));
+                }
+                break;
+
+            case R.id.buttonEquals:
+                Parser p = new Parser();
+                Double DD = solveEquation(p.translate(tv.getText().toString()));
+                tv.setText(DD.toString());
+                break;
+
+            default:
+                tv.append(b.getText());
+                break;
+        }
+
     }
 
     public double solveEquation(String equation){
