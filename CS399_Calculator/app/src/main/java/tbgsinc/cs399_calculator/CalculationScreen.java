@@ -18,7 +18,7 @@ public class CalculationScreen extends AppCompatActivity {
 
     public void onTap(View v){
         Button b = (Button) findViewById(v.getId());
-        TextView tv = (TextView) findViewById(R.id.equationView);
+        final TextView tv = (TextView) findViewById(R.id.equationView);
 
         switch (v.getId()) {
             case R.id.buttonBack:
@@ -29,9 +29,14 @@ public class CalculationScreen extends AppCompatActivity {
 
             case R.id.buttonEquals:
                 Parser p = new Parser();
-                Double DD = solveEquation(p.translate(tv.getText().toString()));
-                // Can grab Equation and Result here to save for Historical View/Screen
-                tv.setText(DD.toString());
+                try {
+                    Double DD = solveEquation(p.translate(tv.getText().toString()));
+                    // Can grab Equation and Result here to save for Historical View/Screen
+                    tv.setText(DD.toString());
+                }
+                catch (Exception e) {
+                    tv.setText("ERROR");
+                }
                 break;
 
             default:
@@ -39,6 +44,13 @@ public class CalculationScreen extends AppCompatActivity {
                 break;
         }
 
+        tv.post(new Runnable() {
+            public void run() {
+                tv.measure(0, 0);
+                int width = Math.max(tv.getMeasuredWidth() - tv.getWidth(), 0);
+                tv.scrollTo(width, 0);
+            }
+        });
     }
 
     public double solveEquation(String equation){
