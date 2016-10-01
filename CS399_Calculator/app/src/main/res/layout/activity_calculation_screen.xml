@@ -41,8 +41,8 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/buttonDivide"
-            android:layout_row="1"
-            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_column="3"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
@@ -55,7 +55,7 @@
             android:layout_rowWeight="1"
             android:id="@+id/buttonMultiply"
             android:layout_row="1"
-            android:layout_column="1"
+            android:layout_column="3"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
@@ -67,7 +67,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/buttonSubtract"
-            android:layout_row="1"
+            android:layout_row="4"
             android:layout_column="2"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -80,7 +80,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/buttonAdd"
-            android:layout_row="1"
+            android:layout_row="3"
             android:layout_column="3"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -93,8 +93,8 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/buttonDot"
-            android:layout_row="2"
-            android:layout_column="3"
+            android:layout_row="4"
+            android:layout_column="0"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
@@ -158,7 +158,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button9"
-            android:layout_row="2"
+            android:layout_row="1"
             android:layout_column="2"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -171,7 +171,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button8"
-            android:layout_row="2"
+            android:layout_row="1"
             android:layout_column="1"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -184,7 +184,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button7"
-            android:layout_row="2"
+            android:layout_row="1"
             android:layout_column="0"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -197,8 +197,8 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button0"
-            android:layout_row="3"
-            android:layout_column="3"
+            android:layout_row="4"
+            android:layout_column="1"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
 
@@ -210,7 +210,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button6"
-            android:layout_row="3"
+            android:layout_row="2"
             android:layout_column="2"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -223,7 +223,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button5"
-            android:layout_row="3"
+            android:layout_row="2"
             android:layout_column="1"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -236,7 +236,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button4"
-            android:layout_row="3"
+            android:layout_row="2"
             android:layout_column="0"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -247,7 +247,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/button3"
-            android:layout_row="4"
+            android:layout_row="3"
             android:layout_column="2"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -260,7 +260,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button2"
-            android:layout_row="4"
+            android:layout_row="3"
             android:layout_column="1"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
@@ -273,7 +273,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/button1"
-            android:layout_row="4"
+            android:layout_row="3"
             android:layout_column="0"
             android:onClick="onTap"
             style="@style/Widget.AppCompat.Button.Borderless"/>
