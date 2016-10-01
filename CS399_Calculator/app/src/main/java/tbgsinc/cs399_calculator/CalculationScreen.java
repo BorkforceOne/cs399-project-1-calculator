@@ -10,6 +10,14 @@ import java.util.Stack;
 
 public class CalculationScreen extends AppCompatActivity {
 
+    String currentEquation = "";
+    String lastSolution = "";
+
+    String[] reservedWords = {
+            "ANS",
+            "Infinity"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,28 +30,67 @@ public class CalculationScreen extends AppCompatActivity {
 
         switch (v.getId()) {
             case R.id.buttonBack:
-                if (tv.getText().length() > 0) {
-                    tv.setText(tv.getText().subSequence(0, tv.getText().length() - 1));
+                if (currentEquation.length() > 0) {
+                    // Look for non-operator strings and erase them all the way
+                    boolean found = false;
+
+                    // Check for reserved words and delete them when BACK is pressed
+                    for (String reservedWord : reservedWords) {
+                        if (currentEquation.endsWith(reservedWord)) {
+                            currentEquation = currentEquation.subSequence(0, currentEquation.length() - reservedWord.length()).toString();
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    // See if we replaced anything, if we didn't then we can just truncate it
+                    if (!found)
+                        currentEquation = currentEquation.subSequence(0, currentEquation.length() - 1).toString();
                 }
+
+                tv.setText(currentEquation);
                 break;
 
             case R.id.buttonEquals:
                 Parser p = new Parser();
+
+                String equation = currentEquation.replaceAll("ANS", lastSolution);
+
                 try {
-                    Double DD = solveEquation(p.translate(tv.getText().toString()));
-                    // Can grab Equation and Result here to save for Historical View/Screen
-                    tv.setText(DD.toString());
+                    Double DD = solveEquation(p.translate(equation));
+                    lastSolution = DD.toString();
+                    currentEquation = "";
+                    String newString = "= " + lastSolution;
+                    tv.setText(newString);
                 }
                 catch (Exception e) {
+                    // An error occurred, display an error and clear the equation screen
                     tv.setText("ERROR");
+                    currentEquation = "";
                 }
+                break;
+
+            case R.id.buttonAdd:
+            case R.id.buttonSubtract:
+            case R.id.buttonMultiply:
+            case R.id.buttonDivide:
+            case R.id.buttonPow:
+            case R.id.buttonSqrt:
+                // Let an operator use the previous ANS
+                if (currentEquation.equals("")) {
+                    currentEquation += "ANS";
+                }
+                currentEquation += b.getText();
+                tv.setText(currentEquation);
                 break;
 
             default:
-                tv.append(b.getText());
+                currentEquation += b.getText();
+                tv.setText(currentEquation);
                 break;
         }
 
+        // Scroll horizontally to the end of the TextView component
         tv.post(new Runnable() {
             public void run() {
                 tv.measure(0, 0);
