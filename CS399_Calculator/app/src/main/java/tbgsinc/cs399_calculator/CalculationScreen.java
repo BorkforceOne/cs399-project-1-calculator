@@ -30,6 +30,7 @@ public class CalculationScreen extends AppCompatActivity {
             case R.id.buttonEquals:
                 Parser p = new Parser();
                 Double DD = solveEquation(p.translate(tv.getText().toString()));
+                // Can grab Equation and Result here to save for Historical View/Screen
                 tv.setText(DD.toString());
                 break;
 
