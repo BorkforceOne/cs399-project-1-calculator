@@ -72,7 +72,7 @@ public class Parser {
 		String op = "";
 		for(int i=0;i<eq.length();i++){
 			char c = eq.charAt(i);
-			if(Operator.isOperator(op)){
+			if(!(""+op).equals(Operator.SUBTRACTION.symbol()) && Operator.isOperator(op)){
 				foundOperator(op);
 				op="";
 				i--; //Decrement i, since c will not be apart op, thus c's iteration is interrupted by op
@@ -81,8 +81,13 @@ public class Parser {
 				if(op.length()>0){
 					outStr+=" "+op;
 					op="";
+
+					foundOperator(""+c);
 				}
-				foundOperator(""+c);
+				else if(Operator.SUBTRACTION.symbol().equals(""+c) && op.length()==0)
+					op+=c;
+				else
+					foundOperator(""+c);
 			}
 			else op+=c;
 		}
